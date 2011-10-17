@@ -624,11 +624,7 @@ Jx.Dialog = new Class({
         this.isOpening = false;
         this.hide();
         if (this.options.destroyOnClose) {
-            if(this.blanket) {
-                this.blanket.dispose();
-            }
             this.domObj.dispose();
-            this.unstack();
         }
         this.fireEvent('close',[this]);
     },
@@ -645,17 +641,17 @@ Jx.Dialog = new Class({
     },
     
     changeText: function (lang) {
-    	this.parent();
-    	if (this.maxM != undefined && this.maxM != null) {
-			if (this.maximize) {
-				this.maxM.setLabel(this.getText({set:'Jx',key:'panel',value:'restoreLabel'}));
-	    	} else {
-	    		this.maxM.setLabel(this.getText({set:'Jx',key:'panel',value:'maximizeLabel'}));
-	    	}
-    	}
-    	if (this.resizeHandle != undefined && this.resizeHandle != null) {
-    		this.resizeHandle.set('title', this.getText({set:'Jx',key:'dialog',value:'resizeTooltip'}));
-    	}
+      this.parent();
+      if (this.maxM != undefined && this.maxM != null) {
+      if (this.maximize) {
+        this.maxM.setLabel(this.getText({set:'Jx',key:'panel',value:'restoreLabel'}));
+        } else {
+          this.maxM.setLabel(this.getText({set:'Jx',key:'panel',value:'maximizeLabel'}));
+        }
+      }
+      if (this.resizeHandle != undefined && this.resizeHandle != null) {
+        this.resizeHandle.set('title', this.getText({set:'Jx',key:'dialog',value:'resizeTooltip'}));
+      }
       this.toggleCollapse(false);
     },
 
