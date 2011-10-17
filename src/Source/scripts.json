@@ -518,6 +518,12 @@
             "css": ["layout"],
             "images": []
         },
+        "container": {
+            "deps": ["widget"],
+            "desc":"Jx.Layout is used to provide more flexible layout options for applications",
+            "css": [],
+            "images": []
+        },
         "splitter": {
             "deps": ["layout"],
             "opt": ["Drag"],
